@@ -55,4 +55,21 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Mow the lawn");
     assertThat(pageSource()).contains("Buy groceries");
   }
+
+  @Test
+  public void taskShowPageDisplaysDescription() {
+    goTo("http://localhost:4567/tasks/new");
+    fill("#description").with("Make the doughnuts");
+    submit(".btn");
+    click("a", withText("View tasks"));
+    click("a", withText("Make the doughnuts"));
+    assertThat(pageSource()).contains("Make the doughnuts");
+  }
+
+  @Test
+  public void taskNotFoundMessageShown() {
+    goTo("http://localhost:4567/tasks/999");
+    assertThat(pageSource()).contains("Task not found");
+  }
+
 }

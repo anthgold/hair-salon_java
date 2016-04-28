@@ -3,6 +3,11 @@ import static org.junit.Assert.*;
 import java.time.LocalDateTime;
 
 public class TaskTest {
+  @After
+  public void tearDown() {
+    Task.clear();
+  }
+
   @Test
   public void Task_instantiatesCorrectly_true() {
     Task myTask = new Task("Mow the lawn");
@@ -15,7 +20,6 @@ public class TaskTest {
     assertEquals("Mow the lawn", myTask.getDescription());
   }
 
-  // TESTS FOR COMPLETION
   @Test
   public void isCompleted_isFalseAfterInstantiation_false() {
     Task myTask = new Task("Mow the lawn");
@@ -45,7 +49,7 @@ public class TaskTest {
 
   @Test
   public void getId_tasksInstantiateWithAnID_1() {
-    Task.clear();
+    // Task.clear(); mooted by change of class statment above
     Task myTask = new Task("Mow the lawn");
     assertEquals(1, myTask.getId());
   }

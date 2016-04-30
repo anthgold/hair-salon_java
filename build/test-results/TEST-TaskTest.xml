@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TaskTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-04-28T22:35:05" hostname="epicodus-115.local" time="0.003">
+<testsuite name="TaskTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-04-30T22:28:26" hostname="anthony-CF-T8EWETZ2M" time="0.186">
   <properties/>
-  <testcase name="find_returnsNullWhenNoTaskFound_null" classname="TaskTest" time="0.0"/>
-  <testcase name="all_returnsAllInstancesofTask_true" classname="TaskTest" time="0.0"/>
-  <testcase name="getId_tasksInstantiateWithAnID_1" classname="TaskTest" time="0.0"/>
-  <testcase name="getCreatedAt_instantiatesWithCurrentTime_today" classname="TaskTest" time="0.0"/>
-  <testcase name="isCompleted_isFalseAfterInstantiation_false" classname="TaskTest" time="0.0"/>
-  <testcase name="find_returnsTaskWithSameID_secondTask" classname="TaskTest" time="0.0"/>
-  <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.0"/>
+  <testcase name="find_returnsNullWhenNoTaskFound_null" classname="TaskTest" time="0.002"/>
+  <testcase name="all_returnsAllInstancesofTask_true" classname="TaskTest" time="0.16"/>
+  <testcase name="getId_tasksInstantiateWithAnID_1" classname="TaskTest" time="0.002"/>
+  <testcase name="getCreatedAt_instantiatesWithCurrentTime_today" classname="TaskTest" time="0.002"/>
+  <testcase name="isCompleted_isFalseAfterInstantiation_false" classname="TaskTest" time="0.002"/>
+  <testcase name="find_returnsTaskWithSameID_secondTask" classname="TaskTest" time="0.001"/>
+  <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.001"/>
   <testcase name="Task_instantiatesWithDescription_String" classname="TaskTest" time="0.0"/>
-  <testcase name="clear_emptiesAllTasksFromArrayList_0" classname="TaskTest" time="0.0"/>
+  <testcase name="clear_emptiesAllTasksFromArrayList_0" classname="TaskTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

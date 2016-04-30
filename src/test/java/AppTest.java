@@ -1,18 +1,9 @@
 import org.fluentlenium.adapter.FluentTest;
-<<<<<<< HEAD
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-=======
-import java.util.ArrayList; // removeable as we are no longer using ArrayList
-import org.junit.ClassRule; // in App.java
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
->>>>>>> b426a37e37afee10dd82a625ed7f9987786b0d17
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {
@@ -29,16 +20,6 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-<<<<<<< HEAD
-    assertThat(pageSource()).contains("Something red; then something green");
-  }
-
-/*  @Test  // nameOfFunction_testCase_expectedResult()
-  public void squareTestIsASquare() {
-    goTo("http://localhost:4567/");
-    // test goes here
-    // assertFoo(pageSource()).contains("Your foo is a bar!"); */
-=======
     assertThat(pageSource()).contains("Task list!");
   }
 
@@ -88,7 +69,6 @@ public class AppTest extends FluentTest {
   public void taskNotFoundMessageShown() {
     goTo("http://localhost:4567/tasks/999");
     assertThat(pageSource()).contains("Task not found");
->>>>>>> b426a37e37afee10dd82a625ed7f9987786b0d17
   }
 
 }

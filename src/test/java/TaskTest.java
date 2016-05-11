@@ -38,14 +38,12 @@ public class TaskTest {
     assertTrue(Task.all().get(0).equals(myTask));
   }
 
-
-
-  @After
-  public void tearDown() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "DELETE FROM tasks *;";
-      con.createQuery(sql).executeUpdate();
-    }
+  @Test
+  public void save_assignsIdToObject() {
+    Task myTask = new Task("Mow the lawn");
+    myTask.save();
+    Task savedTask = Task.all().get(0);
+    assertEquals(myTask.getId(), savedTask.getId());
   }
 
 }

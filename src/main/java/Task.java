@@ -30,16 +30,18 @@ public class Task {
       return false;
     } else {
       Task newTask = (Task) otherTask;
-      return this.getDescription().equals(newTask.getDescription());
+      return this.getDescription().equals(newTask.getDescription()) &&
+             this.getId() == newTask.getId();
     }
   }
 
-  public void save() {
+  public void save() { // the placeholder :description protects against SQL injection
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO tasks (description) VALUES (:description)"; // the placeholder :description protects against SQL injection
-      con.createQuery(sql)
+      String sql = "INSERT INTO tasks (description) VALUES (:description)";
+      this.id = (int) con.createQuery(sql, true)
         .addParameter("description", this.description)
-        .executeUpdate();
+        .executeUpdate()
+        .getKey();
     }
   }
 

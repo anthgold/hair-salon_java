@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "todo-database"
+archivesBaseName = "todo-database" // change base name
 version = '1.0'
 mainClassName = "App"
 

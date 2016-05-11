@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TaskTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-05-02T16:19:41" hostname="epicodus-48.local" time="0.131">
+<testsuite name="TaskTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-05-11T04:22:26" hostname="Jakes-iMac.local" time="0.212">
   <properties/>
-  <testcase name="equals_returnsTrueIfDescriptionsAreTheSame" classname="TaskTest" time="0.078"/>
-  <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.029"/>
-  <testcase name="save_returnsTrueIfDescriptionsAreTheSame" classname="TaskTest" time="0.015"/>
-  <testcase name="getDescription_taskInstantiatesWithDescription_String" classname="TaskTest" time="0.005"/>
-  <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.004"/>
+  <testcase name="equals_returnsTrueIfDescriptionsAreTheSame" classname="TaskTest" time="0.115"/>
+  <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.047"/>
+  <testcase name="save_returnsTrueIfDescriptionsAreTheSame" classname="TaskTest" time="0.027"/>
+  <testcase name="getDescription_taskInstantiatesWithDescription_String" classname="TaskTest" time="0.011"/>
+  <testcase name="Task_instantiatesCorrectly_true" classname="TaskTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

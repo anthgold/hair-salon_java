@@ -4,10 +4,8 @@ import static org.junit.Assert.*;
 
 public class TaskTest {
 
-  @Before
-  public void setUp() {
-    DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/to_do_test", null, null);
-  }
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
   @Test
   public void Task_instantiatesCorrectly_true() {

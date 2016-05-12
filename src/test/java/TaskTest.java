@@ -16,7 +16,7 @@ public class TaskTest {
   @Test
   public void getDescription_taskInstantiatesWithDescription_String() {
     Task myTask = new Task("Mow the lawn", 1);
-    assertEquals("Mow the lawn", 1, myTask.getDescription());
+    assertEquals("Mow the lawn", myTask.getDescription());
   }
 
   @Test
@@ -58,7 +58,7 @@ public class TaskTest {
   public void save_savesCategoryIdIntoDB_true() {
     Category myCategory = new Category("Household chores");
     myCategory.save();
-    Task myTask = new Task("Mow the lawn", 1, myCategory.getId());
+    Task myTask = new Task("Mow the lawn", myCategory.getId());
     myTask.save();
     Task savedTask = Task.find(myTask.getId());
     assertEquals(savedTask.getCategoryId(), myCategory.getId());

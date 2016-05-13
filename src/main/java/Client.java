@@ -18,7 +18,7 @@ public class Client {
   }
 
   public static List<Client> all() {
-    String sql = "SELECT id, name FROM clients";
+    String sql = "SELECT id, clientName FROM clients";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Client.class);
     }
@@ -37,7 +37,7 @@ public class Client {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients(name) VALUES (:clientName)";
+      String sql = "INSERT INTO clients(clientName) VALUES (:clientName)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("clientName", this.clientName)
         .executeUpdate()

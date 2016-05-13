@@ -14,9 +14,9 @@ public class ClientTest {
   }
 
   @Test
-  public void getName_clientInstantiatesWithName_String() {
+  public void getClientName_clientInstantiatesWithClientName_String() {
     Client myClient = new Client("Charlene Cliente");
-    assertEquals("Charlene Cliente", myClient.getName());
+    assertEquals("Charlene Cliente", myClient.getClientName());
   }
 
   @Test
@@ -25,14 +25,14 @@ public class ClientTest {
   }
 
   @Test
-  public void equals_returnsTrueIfNamesAreTheSame() {
+  public void equals_returnsTrueIfClientNamesAreTheSame() {
     Client firstClient = new Client("Charlene Cliente");
     Client secondClient = new Client("Charlene Cliente");
     assertTrue(firstClient.equals(secondClient));
   }
 
   @Test
-  public void save_returnsTrueIfNamesAreTheSame() {
+  public void save_returnsTrueIfClientNamesAreTheSame() {
     Client myClient = new Client("Charlene Cliente");
     myClient.save();
     assertTrue(Client.all().get(0).equals(myClient));

@@ -4,14 +4,14 @@ import org.sql2o.*;
 public class Stylist {
   private int id;
   private String description;
-  private int categoryId;
+  private int clientId;
 
-  public Stylist(String description, int categoryId) {
+  public Stylist(String description, int clientId) {
     this.description = description;
-    this.categoryId = categoryId;
+    this.clientId = clientId;
   }
 
-  public String getDescription() {
+  public String getStylistName() {
     return description;
   }
 
@@ -19,12 +19,12 @@ public class Stylist {
     return id;
   }
 
-  public int getCategoryId() {
-    return categoryId;
+  public int getClientId() {
+    return clientId;
   }
 
   public static List<Stylist> all() {
-    String sql = "SELECT id, description, categoryId FROM stylists";
+    String sql = "SELECT id, description, clientId FROM stylists";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Stylist.class);
     }
@@ -36,18 +36,18 @@ public class Stylist {
       return false;
     } else {
       Stylist newStylist = (Stylist) otherStylist;
-      return this.getDescription().equals(newStylist.getDescription()) &&
+      return this.getStylistName().equals(newStylist.getStylistName()) &&
              this.getId() == newStylist.getId() &&
-             this.getCategoryId() == newStylist.getCategoryId();
+             this.getClientId() == newStylist.getClientId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO stylists(description, categoryId) VALUES (:description, :categoryId)";
+      String sql = "INSERT INTO stylists(description, clientId) VALUES (:description, :clientId)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("description", this.description)
-        .addParameter("categoryId", this.categoryId)
+        .addParameter("clientId", this.clientId)
         .executeUpdate()
         .getKey();
     }

@@ -50,14 +50,15 @@ public class StylistTest {
     assertEquals(myStylist.getId(), savedStylist.getId());
   }
 
-  // @Test
-  //   public void find_findsStylistInDatabase_true() {
-  //   Stylist myStylist = new Stylist("Sue Stylish", 1);
-  //   myStylist.save();
-  //   Stylist savedStylist = Stylist.find(myStylist.getId());
-  //   assertTrue(myStylist.equals(savedStylist));
-  // }
-  //
+  @Test
+    public void find_findsStylistInDatabase_true() {
+    Stylist myStylist = new Stylist("Sue Stylish");
+    // Stylist myStylist = new Stylist("Sue Stylish", 1);
+    myStylist.save();
+    Stylist savedStylist = Stylist.find(myStylist.getId());
+    assertTrue(myStylist.equals(savedStylist));
+  }
+
   // // @Test
   // // public void save_savesstylistIdIntoDB_true() {
   // //   Client myClient = new Client("Household chores");

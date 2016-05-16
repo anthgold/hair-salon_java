@@ -1,4 +1,4 @@
-import.org.sql2o.*;
+import org.sql2o.*;
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;

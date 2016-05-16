@@ -3,51 +3,43 @@ import org.sql2o.*;
 
 public class Stylist {
   private int id;
-  private String styleName;
-  private int clientId;
+  private String name;
 
-  public Stylist(String styleName, int clientId) {
-    this.styleName = styleName;
-    this.clientId = clientId;
+  public Stylist(String name) {
+    this.name = name;
   }
 
-  public String getStyleName() {
-    return styleName;
+  public String getName() {
+    return name;
   }
 
   public int getId() {
     return id;
   }
 
-  public int getClientId() {
-    return clientId;
-  }
-
   public static List<Stylist> all() {
-    String sql = "SELECT id, stylename, clientId FROM stylists";
+    String sql = "SELECT id, name FROM stylists";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Stylist.class);
     }
   }
 
   @Override
-  public boolean equals(Object otherStylist){
+  public boolean equals(Object otherStylist) {
     if (!(otherStylist instanceof Stylist)) {
       return false;
     } else {
       Stylist newStylist = (Stylist) otherStylist;
-      return this.getStyleName().equals(newStylist.getStyleName()) &&
-             this.getId() == newStylist.getId() &&
-             this.getClientId() == newStylist.getClientId();
+      return this.getName().equals(newStylist.getName()) &&
+             this.getId() == newStylist.getId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO stylists(styleName, clientId) VALUES (:styleName, :clientId)";
+      String sql = "INSERT INTO stylists(name) VALUES (:name)";
       this.id = (int) con.createQuery(sql, true)
-        .addParameter("styleName", this.styleName)
-        .addParameter("clientId", this.clientId)
+        .addParameter("name", this.name)
         .executeUpdate()
         .getKey();
     }
@@ -68,7 +60,7 @@ public class Stylist {
   //     String sql = "SELECT * FROM clients where stylistId=:id";
   //     return con.createQuery(sql)
   //       .addParameter("id", this.id)
-  //       .executeAndFetch(Task.class);
+  //       .executeAndFetch(Client.class);
   //   }
   // }
 

@@ -3,43 +3,50 @@ import org.sql2o.*;
 
 public class Client {
   private int id;
-  private String clientName;
+  private String name;
+  private int stylistId;
 
-  public Client(String clientName) {
-    this.clientName = clientName;
+  public Client(String name, int stylistId) {
+    this.name = name;
+    this.stylistId = stylistId;
   }
 
-  public String getClientName() {
-    return clientName;
+  public String getName() {
+    return name;
   }
 
   public int getId() {
     return id;
   }
 
+  public int getStylistId() {
+    return stylistId;
+  }
+
   public static List<Client> all() {
-    String sql = "SELECT id, clientName FROM clients";
+    String sql = "SELECT id, name, stylistId FROM clients";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Client.class);
     }
   }
 
   @Override
-  public boolean equals(Object otherClient) {
+  public boolean equals(Object otherClient){
     if (!(otherClient instanceof Client)) {
       return false;
     } else {
       Client newClient = (Client) otherClient;
-      return this.getClientName().equals(newClient.getClientName()) &&
+      return this.getName().equals(newClient.getName()) &&
              this.getId() == newClient.getId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients(clientName) VALUES (:clientName)";
+      String sql = "INSERT INTO clients(name, stylistId) VALUES (:name, :stylistId)";
       this.id = (int) con.createQuery(sql, true)
-        .addParameter("clientName", this.clientName)
+        .addParameter("name", this.name)
+        .addParameter("stylistId", this.stylistId)
         .executeUpdate()
         .getKey();
     }
@@ -54,4 +61,7 @@ public class Client {
       return client;
     }
   }
+
+
+
 }

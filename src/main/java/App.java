@@ -14,13 +14,22 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+/*
+    get("stylists/new", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/stylist-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
-    // get("stylists/new", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("template", "templates/stylist-form.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
+    post("/stylists", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String styleName = request.queryParams("styleName");
+      Stylist newStylist = new Stylist(styleName);
+      newStylist.save();
+      model.put("template", "templates/stylist-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine()); */
+
     // get("/stylists", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();
     //   model.put("stylists", Stylist.all());
@@ -31,7 +40,7 @@ public class App {
     // post("/stylists", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();
     //
-    //   Client client = Client.find(Integer.parseInt(request.queryParams("clientId"))); // I suspect "clientId" is the error
+    //   Client client = Client.find(Integer.parseInt(request.queryParams("clientId")));
     //
     //   String styleName = request.queryParams("styleName");
     //
@@ -39,10 +48,10 @@ public class App {
     //   newStylist.save();
     //
     //   model.put("client", client);
-    //   model.put("template", "templates/client-stylists-success.vtl");
+    //   model.put("template", "templates/stylist-success.vtl");
     //   return new ModelAndView(model, layout);
     // }, new VelocityTemplateEngine());
-    //
+
     // get("/stylists/:id", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();
     //   Stylist stylist = Stylist.find(Integer.parseInt(request.params(":id")));

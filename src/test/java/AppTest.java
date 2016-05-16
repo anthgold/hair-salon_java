@@ -26,15 +26,15 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Salon Tracker");
   }
 
-  // @Test
-  // public void stylistIsCreatedTest() {
-  //   goTo("http://localhost:4567/");
-  //   click("a", withText("Add a new stylist"));
-  //   fill("#styleName").with("Mow the lawn");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Your stylist has been saved.");
-  // }
-  //
+  @Test
+  public void stylistIsCreatedTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add a new stylist"));
+    fill("#styleName").with("Sarah Shearer");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your stylist has been saved.");
+  }
+
   // @Test
   // public void stylistIsDisplayedTest() {
   //   goTo("http://localhost:4567/stylists/new");

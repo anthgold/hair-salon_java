@@ -14,7 +14,7 @@ public class App {
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-/*
+
     get("stylists/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/stylist-form.vtl");
@@ -28,7 +28,7 @@ public class App {
       newStylist.save();
       model.put("template", "templates/stylist-success.vtl");
       return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine()); */
+    }, new VelocityTemplateEngine()); 
 
     // get("/stylists", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();

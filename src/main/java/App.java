@@ -28,15 +28,15 @@ public class App {
       newStylist.save();
       model.put("template", "templates/stylist-success.vtl");
       return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine()); 
+    }, new VelocityTemplateEngine());
 
-    // get("/stylists", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //   model.put("stylists", Stylist.all());
-    //   model.put("template", "templates/stylists.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
+    get("/stylists", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("stylists", Stylist.all());
+      model.put("template", "templates/stylists.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     // post("/stylists", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();
     //

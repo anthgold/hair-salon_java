@@ -54,6 +54,17 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Tawnya Trims");
   }
 
+  @Test
+  public void stylistClientsFormIsDisplayed() {
+    goTo("http://localhost:4567/stylists/new");
+    fill("#styleName").with("Irene H. Hare");
+    submit(".btn");
+    click("a", withText("View Stylists"));
+    click("a", withText("Irene H. Hare"));
+    click("a", withText("Add a new client"));
+    assertThat(pageSource()).contains("Add a new client:");
+  }
+
   // @Test
   // public void multipleStylistsAreDisplayedTest() {
   //   goTo("http://localhost:4567/stylists/new");

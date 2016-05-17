@@ -35,15 +35,15 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Your stylist has been saved.");
   }
 
-  // @Test
-  // public void stylistIsDisplayedTest() {
-  //   goTo("http://localhost:4567/stylists/new");
-  //   fill("#styleName").with("Mow the lawn");
-  //   submit(".btn");
-  //   click("a", withText("View stylists"));
-  //   assertThat(pageSource()).contains("Mow the lawn");
-  // }
-  //
+  @Test
+  public void stylistIsDisplayedTest() {
+    goTo("http://localhost:4567/stylists/new");
+    fill("#styleName").with("Sarah Shearer");
+    submit(".btn");
+    click("a", withText("View stylists"));
+    assertThat(pageSource()).contains("Sarah Shearer");
+  }
+
   // @Test
   // public void multipleStylistsAreDisplayedTest() {
   //   goTo("http://localhost:4567/stylists/new");

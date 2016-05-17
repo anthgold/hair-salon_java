@@ -65,6 +65,21 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Add a new client:");
   }
 
+  @Test
+  public void clientsIsAddedAndDisplayed() {
+    goTo("http://localhost:4567/stylists/new");
+    fill("#styleName").with("Sally Shears"); // nee name
+    submit(".btn");
+    click("a", withText("View stylists"));
+    click("a", withText("Sally Shears"));
+    click("a", withText("Add a new client"));
+    fill("#clientName").with("Cat Carlson"); // nee description
+    submit(".btn");
+    click("a", withText("View stylists"));
+    click("a", withText("Sally Shears"));
+    assertThat(pageSource()).contains("Cat Carlson");
+  }
+
   // @Test
   // public void multipleStylistsAreDisplayedTest() {
   //   goTo("http://localhost:4567/stylists/new");

@@ -44,6 +44,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Sarah Shearer");
   }
 
+  @Test
+  public void stylistShowPageDisplaysName() {
+    goTo("http://localhost:4567/stylists/new");
+    fill("#styleName").with("Tawnya Trims");
+    submit(".btn");
+    click("a", withText("View stylists"));
+    click("a", withText("Tawnya Trims"));
+    assertThat(pageSource()).contains("Tawnya Trims");
+  }
+
   // @Test
   // public void multipleStylistsAreDisplayedTest() {
   //   goTo("http://localhost:4567/stylists/new");
@@ -58,16 +68,7 @@ public class AppTest extends FluentTest {
   //   assertThat(pageSource()).contains("Buy groceries");
   // }
   //
-  // @Test
-  // public void stylistShowPageDisplaysStyleName() {
-  //   goTo("http://localhost:4567/stylists/new");
-  //   fill("#styleName").with("Make the doughnuts");
-  //   submit(".btn");
-  //   click("a", withText("View stylists"));
-  //   click("a", withText("Make the doughnuts"));
-  //   assertThat(pageSource()).contains("Make the doughnuts");
-  // }
-  //
+
   // @Test
   // public void stylistNotFoundMessageShown() {
   //   goTo("http://localhost:4567/stylists/999");

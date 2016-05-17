@@ -1,0 +1,13 @@
+<h1> Add a new client: </h1>
+
+<p> Add a client here: </p>
+
+<form action="/clients" method="post">
+  <label for="styleName"> Client Name </label>
+  <input id="styleName" name="styleName" type="text">
+
+  <input id="stylistId" name="stylistId" type="hidden" value="$stylist.getId()">
+
+  <button type="submit" class="btn btn-default"> Add Client </button>
+
+</form>

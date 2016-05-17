@@ -1,8 +1,4 @@
-#if ($stylist)                    // more to come
-  <h1>$stylist.getName()</h1>
-#else
-  <h1> Stylist not found </h1>
-#end
+<h1>$stylist.getName()</h1>
 
-<a href="/stylists/new">Add another stylist</a>
+<a href="/stylists/$stylist.getId()/clients/new">Add a new client</a>
 <a href="/stylists">All stylists</a>

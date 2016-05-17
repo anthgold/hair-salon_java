@@ -59,7 +59,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/stylists/new");
     fill("#styleName").with("Irene H. Hare");
     submit(".btn");
-    click("a", withText("View Stylists"));
+    click("a", withText("View stylists"));
     click("a", withText("Irene H. Hare"));
     click("a", withText("Add a new client"));
     assertThat(pageSource()).contains("Add a new client:");

@@ -53,18 +53,18 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // post("/stylists", (request, response) -> {
+    // post("/clients", (request, response) -> {
     //   Map<String, Object> model = new HashMap<String, Object>();
     //
-    //   Client client = Client.find(Integer.parseInt(request.queryParams("clientId")));
+    //   Task task = Task.find(Integer.parseInt(request.queryParams("taskId")));
     //
     //   String styleName = request.queryParams("styleName");
     //
-    //   Stylist newStylist = new Stylist(styleName, client.getId());
+    //   Stylist newStylist = new Stylist(styleName, task.getId());
     //   newStylist.save();
     //
-    //   model.put("client", client);
-    //   model.put("template", "templates/stylist-success.vtl");
+    //   model.put("task", task);
+    //   model.put("template", "templates/task-clients-success.vtl");
     //   return new ModelAndView(model, layout);
     // }, new VelocityTemplateEngine());
 
@@ -77,8 +77,6 @@ public class App {
       model.put("template", "templates/client-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-
-
 
   }
 }
